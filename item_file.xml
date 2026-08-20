@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="13dp"
+    android:paddingBottom="13dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <CheckBox
+        android:id="@+id/checkSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/badge"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:textColor="#E0A640"
+        android:background="@drawable/badge_bg"
+        android:text="DIR" />
+
+    <ImageView
+        android:id="@+id/folderIcon"
+        android:layout_width="46dp"
+        android:layout_height="38dp"
+        android:visibility="gone"
+        android:scaleType="fitCenter" />
+
+    <ImageView
+        android:id="@+id/thumbImage"
+        android:layout_width="46dp"
+        android:layout_height="38dp"
+        android:visibility="gone"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#E9E4D4"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="nome do arquivo" />
+
+        <TextView
+            android:id="@+id/fileMeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#83816F"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:layout_marginTop="2dp"
+            android:text="—" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⋮"
+        android:id="@+id/btnMore"
+        android:textColor="#83816F"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+</LinearLayout>

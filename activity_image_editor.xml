@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#12130F">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#12130F"
+        app:titleTextColor="#E9E4D4"
+        app:title="Editar foto" />
+
+    <com.abridor.app.ImageEditorView
+        android:id="@+id/editorView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:id="@+id/panelContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="#1B1C16">
+        <LinearLayout
+            android:id="@+id/toolRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <TextView android:id="@+id/toolCrop" style="@style/EditorToolBtn" android:text="▦&#10;CORTAR" />
+            <TextView android:id="@+id/toolRotate" style="@style/EditorToolBtn" android:text="↻&#10;GIRAR" />
+            <TextView android:id="@+id/toolFlip" style="@style/EditorToolBtn" android:text="⇋&#10;ESPELHAR" />
+            <TextView android:id="@+id/toolFilters" style="@style/EditorToolBtn" android:text="◐&#10;FILTROS" />
+            <TextView android:id="@+id/toolAdjust" style="@style/EditorToolBtn" android:text="☼&#10;AJUSTES" />
+            <TextView android:id="@+id/toolDraw" style="@style/EditorToolBtn" android:text="✎&#10;DESENHAR" />
+            <TextView android:id="@+id/toolText" style="@style/EditorToolBtn" android:text="T&#10;TEXTO" />
+            <TextView android:id="@+id/toolUndo" style="@style/EditorToolBtn" android:text="↶&#10;DESFAZER" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

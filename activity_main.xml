@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#12130F">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#12130F"
+        app:titleTextColor="#E9E4D4"
+        app:title="ABRIDOR" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <TextView
+            android:id="@+id/pathText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textColor="#E0A640"
+            android:fontFamily="monospace"
+            android:textSize="12sp"
+            android:text="/" />
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/storageBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/storageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:textColor="#83816F"
+            android:text="Calculando armazenamento…" />
+        <ProgressBar
+            android:id="@+id/storageProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginTop="6dp"
+            android:max="100"
+            android:progress="0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pasteBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1B1C16"
+        android:padding="8dp"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/pasteLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#83816F"
+            android:textSize="12sp"
+            android:gravity="center_vertical"
+            android:text="1 item na área de transferência" />
+        <Button
+            android:id="@+id/btnPasteHere"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COLAR AQUI"
+            android:textColor="#E0A640" />
+        <Button
+            android:id="@+id/btnCancelPaste"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCELAR"
+            android:textColor="#83816F" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selectionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1B1C16"
+        android:padding="4dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/btnCancelSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✕"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:textColor="#E9E4D4" />
+        <TextView
+            android:id="@+id/selectionCountLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#E9E4D4"
+            android:textSize="13sp"
+            android:gravity="center_vertical"
+            android:paddingStart="4dp"
+            android:text="1 selecionado" />
+        <TextView
+            android:id="@+id/btnSelectAll"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TODOS"
+            android:textSize="12sp"
+            android:textColor="#83816F"
+            android:padding="10dp" />
+        <TextView
+            android:id="@+id/btnShareSelected"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COMPARTILHAR"
+            android:textSize="12sp"
+            android:textColor="#E0A640"
+            android:padding="10dp" />
+        <TextView
+            android:id="@+id/btnDeleteSelected"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXCLUIR"
+            android:textSize="12sp"
+            android:textColor="#E0714F"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp" />
+
+</LinearLayout>
